@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {FiPlus, FiArrowRight} from "react-icons/fi";
+import {FiArrowRight, FiPlus} from "react-icons/fi";
 import { Map,TileLayer, Marker, Popup } from 'react-leaflet';
 import Leaflet from 'leaflet';
 
-import 'leaflet/dist/leaflet.css'
+import 'leaflet/dist/leaflet.css';
 
 import mapMarkertImg from '../images/map-marker.svg';
 //import { FiPrinter } from 'react-icons/fi';//
@@ -48,21 +48,17 @@ return(
 icon={mapIcon}
 position={[-23.9823302,-46.2187237]}
 >
-  <Popup closeButton={false} minWidth={240} maxWidth={240} className="map-popup">
-  Lar das crianças
-<Link to="">
-<FiArrowRight size={20} color="#fff"/>
+  <Popup clssButton={false} minWidth={240} maxWidth={240} className="map-popup">
+Lar das Meninas
+<Link to="/orphanages/1">
+  <FiArrowRight size={20} color="#fff"/>
 </Link>
-
-
   </Popup>
 </Marker>
-
-
 </Map>
 
 
-<Link to="" className="create-orphanage">
+<Link to="/orphanages/create" className="create-orphanage">
 <FiPlus size={32} color="#fff" />
 </Link>
 
