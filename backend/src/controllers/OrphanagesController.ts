@@ -31,6 +31,7 @@ return response.json(orphanage);
 },
 
   async create(request: Request, response: Response){
+
     const {
       name, 
       latitude,
@@ -43,6 +44,12 @@ return response.json(orphanage);
       
       const orphanagesRepository = getRepository(Orphanage); 
       
+      const requestImages = request.files as Express.Multer.File[];
+      const images = requestImages.map(image =>{
+        return{ path: image.filename }
+      } 
+      )
+
       const orphanage = orphanagesRepository.create({
         name, 
         latitude,
@@ -50,7 +57,8 @@ return response.json(orphanage);
         about,
         instructions,
         opening_hours,
-        open_on_weekends
+        open_on_weekends,
+        images
       });
       
       await orphanagesRepository.save(orphanage);
