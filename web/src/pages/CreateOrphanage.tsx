@@ -79,7 +79,7 @@ images.forEach(image =>{
 })
 
 await api.post('orphanages', data );
-alert('Cadastro realizad com Sucesso!');
+alert('Cadastro realizado com Sucesso!');
 
 
 history.push('/app')
@@ -100,7 +100,7 @@ history.push('/app')
             <legend>Dados</legend>
 
             <Map 
-              center={[-27.2092052,-49.6401092]} 
+              center={[-23.9823302,-46.2187237]} 
               style={{ width: '100%', height: 280 }}
               zoom={15}
               onClick={handleMapClick}
